@@ -10,7 +10,7 @@ const button = () => {
 </script>
 
 <template>
-    <h1>Generic Movie Company Name</h1>
+    <h1>Movie Company Name</h1>
     <button @click="button">Login</button>
 </template>
 
