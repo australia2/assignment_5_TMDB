@@ -10,18 +10,36 @@ const button = () => {
 </script>
 
 <template>
-    <h1>Movie Company Name</h1>
-    <button @click="button">Login</button>
+    <div>
+        <p>Movie Company Name</p>
+        <button @click="button">Login</button>
+    </div>
 </template>
 
 <style scoped>
-h1{
-    display: inline;
+div {
+    background-color: white;
+    border-bottom: 10px;
+    border-color: aquamarine;
 }
-button{
-    float: right;
+
+p {
+    display: inline;
+    font-size: 50px;
+    padding-left: 10px;
+}
+
+button {
     width: 100px;
-    height: 30px;
+    height: 40px;
     font-size: 20px;
+    border-radius: 10px;
+    float: right;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: rgb(144, 206, 161);
+    color: rgb(255, 255, 255);
 }
 </style>
