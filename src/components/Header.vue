@@ -20,7 +20,6 @@ const button = () => {
 div {
     background-color: white;
     border-bottom: 10px;
-    border-color: aquamarine;
 }
 
 p {
@@ -35,11 +34,14 @@ button {
     font-size: 20px;
     border-radius: 10px;
     float: right;
-    margin-top: 10px;
+    margin-top: 20px;
+    background-color: rgba(137, 137, 137, 0.5);
 }
 
 button:hover{
     background-color: rgb(144, 206, 161);
     color: rgb(255, 255, 255);
+    box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.5);
+
 }
 </style>

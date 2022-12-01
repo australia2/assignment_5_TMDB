@@ -45,6 +45,7 @@ p {
 .topleft{
   display: flex;
   justify-content: center;
+  color: white;
 }
 .TMDB{
   max-width: 100px;

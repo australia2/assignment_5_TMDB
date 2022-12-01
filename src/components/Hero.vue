@@ -37,26 +37,19 @@ import { ref } from 'vue'
   position: relative;
 }
 
-/* .border{
-  width: 30%;
-  height: 0px;
-  border-bottom: 500px solid rgba(1, 180, 228, 0.8);
-  border-right: 400px solid transparent;
-  position: relative;
-} */
-
 .p {
   padding-top: 20px;
   margin-left: 20px;
   color: white;
   font-size: 65px;
+  line-height: 65px;
 }
 
 .sub{
   padding-top: 20px;
   margin-left: 20px;
   color: white;
-  line-height: 30px;
+  line-height: 25px;
 }
 
 </style>
