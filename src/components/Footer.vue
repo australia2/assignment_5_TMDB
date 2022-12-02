@@ -4,9 +4,6 @@ import { ref } from 'vue'
 </script>
 
 <template>
-  <div class='one'>
-    <p>Our mission is to almost always deliver <strong>top-notch</strong> entertainment!</p>
-  </div>
   <div class='two'>
     <p>Contact us at <strong>123-333-3333</strong></p>
     <div class="topleft">
@@ -21,15 +18,10 @@ import { ref } from 'vue'
 </template>
 
 <style scoped>
-.one {
-  margin-left: 10px;
-  width: 100%;
-  height: 350px;
-}
 
 .two {
   width: 100%;
-  height: 250px;
+  height: 200px;
   background-color: rgba(13, 37, 63, 0.95);
 }
 

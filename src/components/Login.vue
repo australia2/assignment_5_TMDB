@@ -8,8 +8,8 @@ const password = ref("");
 
 const error = ref(false);
 const login = () => {
-  if (username.value === "tmdb" && password.value === "movies") {
-    router.push("/account");
+  if (username.value === "." && password.value === ".") {
+    router.push("/purchase");
   } else {
     error.value = true;
   }
@@ -36,8 +36,8 @@ const login = () => {
   justify-content: center;
   align-items: center;
   width: 100%;
+  height: 600px;
   display: flex;
-  margin-top: 30%;
 }
 
 form {
@@ -54,7 +54,7 @@ form {
 }
 
 .submit:hover {
-  background-color: rgb(144, 206, 161);
+  background-color: rgba(1, 180, 228, 0.5);
   color: rgb(255, 255, 255);
   box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.5);
 }
@@ -64,10 +64,11 @@ form {
   height: 40px;
   border-style: solid;
   border-width: 1px;
-  border-color: rgb(144, 206, 161);
+  border-color: rgba(1, 180, 228, 0.5);
   border-radius: 10px;
   font-size: 1rem;
   padding-left: 8px;
+  background-color: rgb(240, 240, 240);
 }
 
 .wrong {

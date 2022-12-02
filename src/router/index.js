@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import LoginPage from "../views/LoginPage.vue";
-import Account from "../views/Account.vue"
+import Purchase from "../views/Purchase.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -15,8 +15,8 @@ const router = createRouter({
       component: LoginPage
     },
     {
-      path: '/account',
-      component: Account
+      path: '/purchase',
+      component: Purchase
     },
   ],
 });

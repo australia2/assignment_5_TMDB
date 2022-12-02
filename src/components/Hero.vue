@@ -13,9 +13,18 @@ import { ref } from 'vue'
     </div>
     <div class="border"></div>
   </div>
+  <div class='one'>
+    <p>Our mission is to almost always deliver <strong>top-notch</strong> entertainment!</p>
+  </div>
 </template>
 
 <style scoped>
+.one {
+  margin-left: 10px;
+  width: 100%;
+  height: 350px;
+}
+
 .box {
   width: 100%;
   height: 500px;

@@ -39,9 +39,9 @@ button {
 }
 
 button:hover{
-    background-color: rgb(144, 206, 161);
+    background-color: rgba(1, 180, 228, 0.5);
     color: rgb(255, 255, 255);
-    box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.5);
+    box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.8);
 
 }
 </style>
