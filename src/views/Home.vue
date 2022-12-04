@@ -18,4 +18,10 @@ import Footer from '../components/Footer.vue'
 	position: sticky;
 	top: 0;
 }
+
+* {
+	font-family: 'Darker Grotesque', sans-serif;
+	font-family: 'Mallanna', sans-serif;
+
+}
 </style>

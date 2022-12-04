@@ -1,11 +1,13 @@
 <script setup>
 import Login from '../components/Login.vue';
-import Footer from '../components/Footer.vue'
+import Footer from '../components/Footer.vue';
+import HeaderLoggedIn from '../components/HeaderLoggedIn.vue';
 </script>
 
 <template>
-    <Login />
-    <Footer />
+  <HeaderLoggedIn />
+  <Login />
+  <Footer />
 </template>
 
 <style scoped>

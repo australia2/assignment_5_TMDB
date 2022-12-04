@@ -4,13 +4,14 @@ import axios from "axios";
 
 const movie = ref(null);
 const movieName = ref("");
+const imageSrc = ref("");
 
 const getData = async (url, params) => {
-  try {
-    return await axios.get(url, params);
-  } catch (error) {
-    console.log(error);
-  }
+	try {
+		return await axios.get(url, params);
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 const getPopular = async () => {
@@ -22,20 +23,28 @@ const getPopular = async () => {
 		}
 	})).data;
 	console.log(movie.value)
-	movieName.value = movie.value.results[0].original_title
+	movieName.value = movie.value.results
+	// [0].original_title
 	console.log(movieName)
+	for (let result in movieName) {
+		imageSrc.value =  "https://image.tmdb.org/t/p/w500" + result.poster_path
+	}
 }
 
 getPopular()
 </script>
 
 <template>
-	<!-- {/* <h1 v-for="oiuh">Select a movie below</h1> */} -->
-	<!-- <h1 v-if="movie">q</h1> -->
-	<!-- v for results (go through) -->
-	<div>{{movieName}}</div>
+	<div v-for="result in movieName">
+		<img src="" alt="">
+		{{ "https://image.tmdb.org/t/p/w500" + result.poster_path }}
+	</div>
+	<img v-bind:src="imageSrc.value">
+
 </template>
 
 <style scoped>
-
+div {
+	color: black;
+}
 </style>

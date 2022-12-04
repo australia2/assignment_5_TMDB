@@ -36,8 +36,8 @@ const login = () => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 600px;
   display: flex;
+  min-height: 750px;
 }
 
 form {
@@ -47,16 +47,28 @@ form {
 }
 
 .submit {
-  width: 100px;
+  width: 210.36px;
   height: 40px;
   font-size: 20px;
   border-radius: 10px;
+  background-color: rgb(216, 216, 216);
 }
 
 .submit:hover {
   background-color: rgba(1, 180, 228, 0.5);
-  color: rgb(255, 255, 255);
-  box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.5);
+  color: rgb(240, 255, 255);
+  animation-name: hover;
+  animation-duration: 1s;
+}
+
+@keyframes hover {
+  from {
+    background-color: rgb(216, 216, 216);
+  }
+
+  to {
+    background-color: rgba(1, 180, 228, 0.5);
+  }
 }
 
 .input {

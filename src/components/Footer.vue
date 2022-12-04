@@ -5,41 +5,54 @@ import { ref } from 'vue'
 
 <template>
   <div class='two'>
-    <p>Contact us at <strong>123-333-3333</strong></p>
-    <div class="topleft">
-      <p class="top">Made with</p>
+    <div>
+      <p><strong>Contact us</strong></p>
+      <p>100-001-0110</p>
+      <p>movieCompany@movie.com</p>
+      <p>1011 Vista Road, Palo Alto, CA</p>
+      <p>© 1986 Movie Company</p>
+    </div>
+    <div class="line"></div>
+    <div>
+      <p>Terms of service</p>
+      <p>Privacy policy</p>
+    </div>
+    <div class="line"></div>
+    <div class="logo">
+      <p class="TMDB">Made with</p>
       <img class="TMDB"
         src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
         alt="TMDB link">
     </div>
-
   </div>
 
 </template>
 
 <style scoped>
-
+.line{
+  width: 1px;
+  border-radius: 1px;
+  background-color: white;
+  height: 75%;
+}
 .two {
   width: 100%;
-  height: 200px;
-  background-color: rgba(13, 37, 63, 0.95);
+  height: 250px;
+  background-color: rgba(1, 19, 39);
+  display: flex;
+  border-top: 5px;
+  border-style: solid;
+  border-color: rgba(1, 180, 228);
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 p {
   font-size: 1.25rem;
-}
-
-.two>p {
-  color: white;
-  padding: 10px;
-}
-
-.topleft{
-  display: flex;
-  justify-content: center;
   color: white;
 }
-.TMDB{
+
+.TMDB {
   max-width: 100px;
   display: inline;
   margin-left: 5px
