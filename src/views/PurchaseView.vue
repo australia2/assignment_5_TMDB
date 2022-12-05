@@ -1,7 +1,7 @@
 <script setup>
-import HeaderLoggedIn from '../components/HeaderLoggedIn.vue';
-import Movies from '../components/Movies.vue';
-import Footer from '../components/Footer.vue'
+import HeaderLoggedIn from '../components/LoginHeader.vue';
+import Movies from '../components/SiteMovies.vue';
+import Footer from '../components/SiteFooter.vue'
 import PopUp from '../components/PopUp.vue'
 </script>
 

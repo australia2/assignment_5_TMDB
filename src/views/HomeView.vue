@@ -1,8 +1,7 @@
 <script setup>
-import { ref } from "vue";
-import Header from '../components/Header.vue'
-import Hero from '../components/Hero.vue'
-import Footer from '../components/Footer.vue'
+import Header from '../components/HomeHeader.vue'
+import Hero from '../components/SiteHero.vue'
+import Footer from '../components/SiteFooter.vue'
 
 </script>
 
@@ -22,6 +21,5 @@ import Footer from '../components/Footer.vue'
 * {
 	font-family: 'Darker Grotesque', sans-serif;
 	font-family: 'Mallanna', sans-serif;
-
 }
 </style>

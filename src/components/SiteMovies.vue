@@ -24,23 +24,18 @@ const getPopular = async () => {
 	})).data;
 	console.log(movie.value)
 	movieName.value = movie.value.results
-	// [0].original_title
 	console.log(movieName)
-	for (let result in movieName) {
-		imageSrc.value =  "https://image.tmdb.org/t/p/w500" + result.poster_path
-	}
+	// for (let result in movieName) {
+	// 	imageSrc.value = "https://image.tmdb.org/t/p/w500" + result.poster_path
+	// }
 }
-
 getPopular()
 </script>
 
 <template>
 	<div v-for="result in movieName">
-		<img src="" alt="">
-		{{ "https://image.tmdb.org/t/p/w500" + result.poster_path }}
+		<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="">
 	</div>
-	<img v-bind:src="imageSrc.value">
-
 </template>
 
 <style scoped>

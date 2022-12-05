@@ -90,7 +90,6 @@ h1 {
   display: inline;
 }
 
-
 .box {
   width: 100%;
   height: 500px;
@@ -136,7 +135,7 @@ h1 {
   font-size: 23px;
 }
 
-@media only screen and (max-width: 1225px) {
+@media only screen and (max-width: 1250px) {
   #rightest {
     display: none;
 }
