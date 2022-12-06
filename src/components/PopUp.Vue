@@ -4,7 +4,6 @@ import { ref } from "vue";
 const vrai = ref(null);
 const hide = () => {
 	vrai.value = "true";
-
 }
 </script>
 
@@ -27,5 +26,7 @@ h1 {
 	display: inline;
 	margin-left: 10px;
 	background-color: rgb(165, 165, 165);
+	border-radius: 5px
+
 }
 </style>

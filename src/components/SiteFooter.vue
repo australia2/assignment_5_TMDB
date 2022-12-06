@@ -1,6 +1,11 @@
 <script setup>
-import { ref } from 'vue'
+import { useRouter } from "vue-router";
 
+const router = useRouter();
+
+const terms = () => {
+  router.push("/policy")
+}
 </script>
 
 <template>
@@ -14,8 +19,8 @@ import { ref } from 'vue'
     </div>
     <div class="line"></div>
     <div>
-      <p>Terms of service</p>
-      <p>Privacy policy</p>
+      <p class="hover" @click="terms">Terms of service</p>
+      <p class="hover" @click="terms">Privacy policy</p>
     </div>
     <div class="line"></div>
     <div class="logo">
@@ -56,5 +61,11 @@ p {
   max-width: 100px;
   display: inline;
   margin-left: 5px
+}
+
+.hover:hover{
+  background-color: rgb(0, 43, 80);
+  border-radius: 10px;
+  border: 1px white solid;
 }
 </style>

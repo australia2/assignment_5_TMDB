@@ -37,7 +37,7 @@ const login = () => {
   align-items: center;
   width: 100%;
   display: flex;
-  min-height: 750px;
+  min-height: 600px;
 }
 
 form {

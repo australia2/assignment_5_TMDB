@@ -31,13 +31,12 @@ const getPopular = async () => {
 getPopular()
 
 const info = async () => {
-	const data = input.value;
-	movie.value = (await getData(`https://api.themoviedb.org/3/movie/${data}`, {
-		params: {
-			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-			append_to_response: "videos",
-		}
-	})).data;
+	// console.log(result.id)
+	// movie.value = (await getData(`https://api.themoviedb.org/3/movie/${data}`, {
+	// 	params: {
+	// 		api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+	// 	}
+	// })).data;
 	// for (result in movieName) {
 	// 	console.log(result.poster_path)
 	// }
@@ -49,6 +48,7 @@ const info = async () => {
 	<div class="movie-container">
 		<div v-for="result in movieName">
 			<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="" @click="info">
+			<div>{{result.original_title}}</div>
 		</div>
 	</div>
 </template>
