@@ -1,32 +1,42 @@
 <script setup>
 import { ref } from "vue";
 
-const vrai = ref(null);
+const show = ref(true);
 const hide = () => {
-	vrai.value = "true";
+	show.value = false;
 }
 </script>
 
 
 <template>
-	<h1 v-if="vrai"></h1>
-	<h1 v-else="vrai">Welcome to your account! Select a movie below to begin</h1>
-	<button v-if="vrai" type="button" @click="hide"></button>
-	<button v-else="vrai" type="button" @click="hide">x</button>	
+	<div v-if="show">
+		<h1>Welcome to your account! Select a movie below to begin</h1>
+		<button @click="hide">x</button>
+	</div>
+	<!-- 	
+	<button v-else="vrai" type="button" @click="hide">x</button> -->
 </template>
 
 <style scoped>
-button{
+button {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
 	display: inline;
-	width: 10px;
-	border-radius: 5px
+	background-color: none;
 }
 
 h1 {
-	display: inline;
 	margin-left: 10px;
-	background-color: rgb(165, 165, 165);
-	border-radius: 5px
+	border-radius: 5px;
+	display: inline;
+}
+
+div {
+	background-color: rgb(0, 43, 80);
+	color: white;
+	border-top: rgba(1, 180, 228, 0.5) solid 5px;
+	border-bottom: rgba(1, 180, 228, 0.5) solid 5px;
 
 }
 </style>

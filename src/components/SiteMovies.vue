@@ -2,6 +2,19 @@
 import { ref } from 'vue';
 import axios from "axios";
 import { useRouter } from "vue-router";
+import SiteModal from '../components/SiteModal.vue';
+
+const showModal = ref(false);
+const selectedId = ref(0);
+
+const openModal = (id) => {
+  showModal.value = true;
+  selectedId.value = id;
+};
+
+const closeModal = () => {
+  showModal.value = false;
+};
 
 const router = useRouter();
 const movie = ref(null);
@@ -18,7 +31,7 @@ const getData = async (url, params) => {
 
 const getPopular = async () => {
 	const media = "movie"
-	const time = "week"
+	const time = "day"
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media}/${time}`, {
 		params: {
 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
@@ -28,27 +41,32 @@ const getPopular = async () => {
 	movieName.value = movie.value.results
 	console.log(movieName)
 }
+// const info = async () => {
+// 		console.log(movie.value.results[0].original_title)
+// 		}		// console.log(result.id)
+// 		movie.value = (await getData(`https://api.themoviedb.org/3/movie/${data}`, {
+// 			params: {
+// 				api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+// 			}
+// 		})).data;
+// 		for (result in movieName) {
+// 		console.log(result.poster_path)
+// 	}
 getPopular()
 
-const info = async () => {
-	// console.log(result.id)
-	// movie.value = (await getData(`https://api.themoviedb.org/3/movie/${data}`, {
-	// 	params: {
-	// 		api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-	// 	}
-	// })).data;
-	// for (result in movieName) {
-	// 	console.log(result.poster_path)
-	// }
-}
 </script>
 
 <template>
+  <div>
+    <button @click="openModal(5000)">Modal</button>
+  </div>
+  <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
+
 	<!-- Add something for top movie? -->
 	<div class="movie-container">
-		<div v-for="result in movieName">
-			<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="" @click="info">
-			<div>{{result.original_title}}</div>
+		<div v-for="result in movieName"  @click="openModal(result.id)">
+			<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="" >
+			<div>{{ result.id }}</div>
 		</div>
 	</div>
 </template>
