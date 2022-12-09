@@ -10,20 +10,25 @@ const hide = () => {
 
 <template>
 	<div v-if="show">
-		<h1>Welcome to your account! Select a movie below to begin</h1>
-		<button @click="hide">x</button>
+		<h1>Welcome to your account! Select a movie below to begin </h1>
+		<button @click="hide">X</button>
 	</div>
-	<!-- 	
-	<button v-else="vrai" type="button" @click="hide">x</button> -->
 </template>
 
 <style scoped>
+div {
+	display: flex;
+}
 button {
 	width: 20px;
 	height: 20px;
 	border-radius: 10px;
-	display: inline;
-	background-color: none;
+	background-color: lightGrey;
+}
+
+button:hover {
+	background-color: white;
+
 }
 
 h1 {
@@ -37,6 +42,5 @@ div {
 	color: white;
 	border-top: rgba(1, 180, 228, 0.5) solid 5px;
 	border-bottom: rgba(1, 180, 228, 0.5) solid 5px;
-
 }
 </style>

@@ -31,7 +31,7 @@ const getData = async (url, params) => {
 
 const getPopular = async () => {
 	const media = "movie"
-	const time = "day"
+	const time = "week"
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media}/${time}`, {
 		params: {
 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
@@ -41,27 +41,12 @@ const getPopular = async () => {
 	movieName.value = movie.value.results
 	console.log(movieName)
 }
-// const info = async () => {
-// 		console.log(movie.value.results[0].original_title)
-// 		}		// console.log(result.id)
-// 		movie.value = (await getData(`https://api.themoviedb.org/3/movie/${data}`, {
-// 			params: {
-// 				api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-// 			}
-// 		})).data;
-// 		for (result in movieName) {
-// 		console.log(result.poster_path)
-// 	}
 getPopular()
 
 </script>
 
 <template>
-  <div>
-    <button @click="openModal(5000)">Modal</button>
-  </div>
   <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
-
 	<!-- Add something for top movie? -->
 	<div class="movie-container">
 		<div v-for="result in movieName"  @click="openModal(result.id)">

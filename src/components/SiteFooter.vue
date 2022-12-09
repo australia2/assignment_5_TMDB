@@ -63,9 +63,12 @@ p {
   margin-left: 5px
 }
 
+.hover{
+  padding: 10px;
+  justify-content: center;
+}
 .hover:hover{
   background-color: rgb(0, 43, 80);
   border-radius: 10px;
-  border: 1px white solid;
 }
 </style>
