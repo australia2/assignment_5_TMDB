@@ -14,6 +14,7 @@ const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
 const movie = ref("");
+const video = ref("");
 
 const getMovies1 = async () => {
   movie.value = (await getData(`https://api.themoviedb.org/3/movie/${props.id}`, {
@@ -22,7 +23,9 @@ const getMovies1 = async () => {
     }
   })).data;
   console.log(movie.value)
+
 }
+
 getMovies1()
 </script>
 
@@ -30,8 +33,8 @@ getMovies1()
   <Teleport to="body">
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container">
-        <h1>{{ movie.original_title }}</h1>
         <button class="close-button" @click="emits('toggleModal')">X</button>
+        <h1>{{ movie.original_title }}</h1>
         <div class="data-container">
           <img :src='`https://image.tmdb.org/t/p/w500${movie.poster_path}`' alt="">
           <div class="info-container">
@@ -52,7 +55,8 @@ getMovies1()
             <p class="country"><strong>PRODUCTION COUNTRY:</strong> {{ movie.production_countries[0].iso_3166_1 }}</p>
             <p class="OG"><strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}</p>
             <a v-bind:href="movie.homepage" class="link" target="_blank">{{ movie.homepage }}</a>
-            <!-- <a v-bind:src="trailer" frameborder="0" class="video"></a> -->
+            <!-- <a v-bind:src='`https://www.youtube.com/embed/${videos.results.filter((video) => video.type === "Trailer").at(0).key}`'
+              frameborder="0" target="_blank"></a> -->
           </div>
         </div>
       </div>
@@ -83,15 +87,16 @@ h1 {
   flex-wrap: wrap;
   gap: 5px;
   margin: 10px
-
 }
 
-.info-container>p, strong, a{
+.info-container>p,
+strong,
+a {
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
 }
 
-a{
+a {
   color: white
 }
 
@@ -119,11 +124,21 @@ a{
 .modal-outer-container .modal-inner-container .close-button {
   position: absolute;
   right: 0px;
-  padding: 1rem;
   border: none;
-  background: #1F2123;
   font-weight: bold;
   font-size: 1.25rem;
+}
+
+button {
+  background-color: rgb(1, 180, 228);
+  height: min-content;
+  padding: 8.1px;
+  padding-right: 11px;
+  padding-left: 11px;
   color: white;
+}
+
+button:hover{
+  color: rgb(1, 100, 228);
 }
 </style>

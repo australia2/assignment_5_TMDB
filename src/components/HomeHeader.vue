@@ -10,7 +10,7 @@ const button = () => {
 
 <template>
 	<div>
-		<p>Movie Company Name</p>
+		<p>To be changed</p>
 		<button @click="button">Login</button>
 	</div>
 </template>

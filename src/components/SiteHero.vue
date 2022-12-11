@@ -13,7 +13,7 @@
   <div class='one'>
     <div class="textBox">
       <p class="body">Get the <strong>cheapest</strong> deals on the internet, starting at only</p>
-      <h1>3.99$</h1>
+      <h1>$3.99</h1>
       <p class="price"> per month!*</p>
       <p >*includes 3.99 movies</p>
     </div>
