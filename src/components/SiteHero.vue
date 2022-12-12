@@ -38,15 +38,12 @@
   margin-top: 1%;
   height: 410px;
   display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
 }
 
 .textBox{
   padding-top: 2rem;
   padding-bottom: 10%;
-  margin-left: 90px;
-  margin-right: 20px;
+  margin-right: 25px;
 }
 .movieBox {
   width: 45%;

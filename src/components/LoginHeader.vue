@@ -10,7 +10,8 @@ const home = () => {
 </script>
 
 <template> 
-	<p @click="home">To be changed</p>
+	<p @click="home">Budget Movie$</p>
+
 </template>
 
 <style scoped>

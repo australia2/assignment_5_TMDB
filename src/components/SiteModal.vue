@@ -14,19 +14,20 @@ const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
 const movie = ref("");
-const video = ref("");
 
 const getMovies1 = async () => {
-  movie.value = (await getData(`https://api.themoviedb.org/3/movie/${props.id}`, {
-    params: {
-      api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-    }
-  })).data;
-  console.log(movie.value)
+  movie.value = (
+    await getData(`https://api.themoviedb.org/3/movie/${props.id}`, {
+      params: {
+        api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+        append_to_response: "videos",
+      },
+    })
+  ).data;
+  console.log(movie.value);
+};
 
-}
-
-getMovies1()
+getMovies1();
 </script>
 
 <template>
@@ -36,27 +37,36 @@ getMovies1()
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ movie.original_title }}</h1>
         <div class="data-container">
-          <img :src='`https://image.tmdb.org/t/p/w500${movie.poster_path}`' alt="">
+          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
           <div class="info-container">
             <p><strong>RELEASE DATE:</strong> {{ movie.release_date }}</p>
             <p><strong>POPULARITY:</strong> {{ movie.popularity }}</p>
-            <p><strong>RUNTIME:</strong> {{ (movie.runtime - movie.runtime % 60) / 60 }}h {{ movie.runtime % 60
-            }}min</p>
-            <p><strong>OVERVIEW:</strong> {{ movie.overview }} </p>
-            <p><strong>BUDGET:</strong> {{ movie.budget }} $ | <strong>REVENUE:</strong> {{ movie.revenue }} $
-              |
-              <strong>NET GAIN:</strong> {{ movie.revenue - movie.budget }} $
+            <p>
+              <strong>RUNTIME:</strong> {{ (movie.runtime - (movie.runtime % 60)) / 60 }}h
+              {{ movie.runtime % 60 }}min
+            </p>
+            <p><strong>OVERVIEW:</strong> {{ movie.overview }}</p>
+            <p>
+              <strong>BUDGET:</strong> {{ movie.budget }} $ | <strong>REVENUE:</strong>
+              {{ movie.revenue }} $ | <strong>NET GAIN:</strong>
+              {{ movie.revenue - movie.budget }} $
             </p>
             <p>"{{ movie.tagline }}"</p>
-            <strong>GENRES:</strong>
-            <p v-for="result in movie.genres"> {{ result.name }}</p>
-            <strong>PRODUCERS:</strong>
-            <p v-for="result in movie.production_companies"> {{ result.name }}</p>
-            <p class="country"><strong>PRODUCTION COUNTRY:</strong> {{ movie.production_countries[0].iso_3166_1 }}</p>
-            <p class="OG"><strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}</p>
-            <a v-bind:href="movie.homepage" class="link" target="_blank">{{ movie.homepage }}</a>
-            <!-- <a v-bind:src='`https://www.youtube.com/embed/${videos.results.filter((video) => video.type === "Trailer").at(0).key}`'
-              frameborder="0" target="_blank"></a> -->
+            <p> <strong>GENRES: </strong>
+            <div class="genre" v-for="result in movie.genres"> {{ result.name }} </div>
+            </p>
+            <!-- <strong>PRODUCERS:</strong> -->
+            <!-- <p v-for="result in movie.production_companies">{{ result.name }}</p>
+            <p class="country">
+              <strong>PRODUCTION COUNTRY:</strong>
+              {{ movie.production_countries[0].iso_3166_1 }}
+            </p> -->
+            <!-- <p class="OG">
+              <strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}
+            </p> -->
+            <a v-bind:href="movie.homepage" class="link" target="_blank">Movie homepage</a>
+            <a v-bind:href="`https://www.youtube.com/watch?v=${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key
+            }`" target="_blank">Movie trailer</a>
           </div>
         </div>
       </div>
@@ -65,9 +75,14 @@ getMovies1()
 </template>
 
 <style scoped>
+.genre {
+  display: flex;
+  flex-direction: row;
+}
+
 img {
   width: 29%;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 h1 {
@@ -86,7 +101,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin: 10px
+  margin: 10px;
 }
 
 .info-container>p,
@@ -97,7 +112,7 @@ a {
 }
 
 a {
-  color: white
+  color: white;
 }
 
 .modal-outer-container {
@@ -114,7 +129,7 @@ a {
 }
 
 .modal-outer-container .modal-inner-container {
-  background-color: #1F2123;
+  background-color: #1f2123;
   color: white;
   width: clamp(280px, 100%, 800px);
   height: 400px;
@@ -138,7 +153,7 @@ button {
   color: white;
 }
 
-button:hover{
+button:hover {
   color: rgb(1, 100, 228);
 }
 </style>

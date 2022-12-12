@@ -30,15 +30,29 @@ const getData = async (url, params) => {
 	}
 };
 
-const day = () => {
-	time.value = "day";
-	console.log(time.value)
-}
+// const day = () => {
+// 	time.value = "day";
+// 	console.log(time.value)
+// 	getPopular = async () => {
+// 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/movie/day`, {
+// 		params: {
+// 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+// 		}
+// 	})).data;
+// }
+// }
 
-const week = () => {
-	time.value = "week";
-	console.log(time.value)
-}
+// const week = () => {
+// 	time.value = "week";
+// 	console.log(time.value);
+// 	getPopular = async () => {
+// 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
+// 		params: {
+// 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+// 		}
+// 	})).data;
+// }
+// }
 
 const getPopular = async () => {
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
@@ -57,8 +71,8 @@ getPopular()
 	<SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
 	<button @click=day()>Top movies today</button>
 	<button @click=week()>Top movies week</button>
-	<button @click=tv()>Top movies this week</button>
-	<button @click=movie()>Top movies today</button>
+	<!-- <button @click=tv()>Top shows this week</button>
+	<button @click=movie()>Top shows today</button> -->
 
 	<!-- Add something for top movie? -->
 	<!-- <img :src='`https://image.tmdb.org/t/p/w500${movie.results[0].poster_path}`' alt="" > -->
@@ -103,7 +117,8 @@ button {
 button:hover {
 	background-color: rgb(1, 180, 228, 0.5);
 }
-.title{
+
+.title {
 	font-size: 10px;
 }
 </style>

@@ -10,7 +10,7 @@ const button = () => {
 
 <template>
 	<div>
-		<p>To be changed</p>
+		<p>Budget Movie$</p>
 		<button @click="button">Login</button>
 	</div>
 </template>
@@ -42,9 +42,21 @@ button {
 	margin-right: 10px;
 }
 
+
 button:hover {
-	background-color: rgba(1, 180, 228, 0.5);
-	color: rgb(255, 255, 255);
-	box-shadow: 1.5px 1.5px rgba(137, 137, 137, 0.8);
+  background-color: rgba(1, 180, 228, 0.5);
+  color: rgb(240, 255, 255);
+  animation-name: hover;
+  animation-duration: 1s;
+}
+
+@keyframes hover {
+  from {
+    background-color: rgb(216, 216, 216);
+  }
+
+  to {
+    background-color: rgba(1, 180, 228, 0.5);
+  }
 }
 </style>
