@@ -3,7 +3,7 @@ import Home from "../views/HomeView.vue";
 import LoginPage from "../views/LoginView.vue";
 import Purchase from "../views/PurchaseView.vue"
 import Policy from "../views/PolicyView.vue"
-
+import NotFound from "../views/NotFound.vue"
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -23,6 +23,10 @@ const router = createRouter({
       path: '/policy',
       component: Policy
     },
+    {
+      path: '/:pathMatch(.*)*',
+      component: NotFound
+    }
   ],
 });
 
