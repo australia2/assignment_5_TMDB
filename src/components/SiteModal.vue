@@ -52,9 +52,9 @@ getMovies1();
               {{ movie.revenue - movie.budget }} $
             </p>
             <p>"{{ movie.tagline }}"</p>
-            <p> <strong>GENRES: </strong>
-            <div class="genre" v-for="result in movie.genres"> {{ result.name }} </div>
-            </p>
+            
+            <strong>GENRES: </strong>
+              <p class="genre" v-for="result in movie.genres"> {{ result.name }} </p>
             <!-- <strong>PRODUCERS:</strong> -->
             <!-- <p v-for="result in movie.production_companies">{{ result.name }}</p>
             <p class="country">
@@ -102,6 +102,8 @@ h1 {
   flex-wrap: wrap;
   gap: 5px;
   margin: 10px;
+  align-items: center;
+
 }
 
 .info-container>p,
@@ -109,6 +111,7 @@ strong,
 a {
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
+  padding: 5px;
 }
 
 a {

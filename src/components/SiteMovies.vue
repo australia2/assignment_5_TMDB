@@ -89,10 +89,18 @@ getPopular()
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 11px;
+	gap: 5px;
 	align-items: center;
 	justify-content: space-evenly;
 	margin-top: 10px;
+}
+
+.title {
+	font-size: 10px;
+	position: relative;
+	top: -150px;
+	font-weight: 500;
+	opacity: 0;
 }
 
 img {
@@ -101,7 +109,25 @@ img {
 }
 
 img:hover {
-	box-shadow: 0 0 8px 2px rgb(1, 180, 228);
+	opacity: 0.5;
+	animation-name: movieHover;
+	animation-duration: 1s;
+}
+
+@keyframes movieHover {
+	0% {
+		opacity: 0.5;
+		transform: rotateY(0deg);
+
+	}
+	10% {
+		opacity: 0.4;
+		transform: rotateY(1deg);
+	}
+	20% {
+		opacity: 0.3;
+		transform: rotateY(1deg);
+	}
 }
 
 button {
@@ -116,9 +142,5 @@ button {
 
 button:hover {
 	background-color: rgb(1, 180, 228, 0.5);
-}
-
-.title {
-	font-size: 10px;
 }
 </style>

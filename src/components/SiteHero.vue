@@ -12,10 +12,13 @@
   </div>
   <div class='one'>
     <div class="textBox">
-      <p class="body">Get the <strong>cheapest</strong> deals on the internet, starting at only</p>
-      <h1>$3.99</h1>
-      <p class="price"> per month!*</p>
-      <p >*includes 3.99 movies</p>
+      <p class="body">Get the <strong>cheapest</strong> deals for the <strong>hottest</strong> movies on the internet, starting at only
+      </p>
+      <div>
+        <h1>$3.99</h1>
+        <p class="price"> per month!*</p>
+      </div>
+      <p>*includes 3.99 movies</p>
     </div>
     <div class="movieBox">
       <img id="left"
@@ -33,20 +36,23 @@
 
 <style scoped>
 .one {
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 1%;
   height: 410px;
   display: flex;
+  justify-content: center;
+  gap: 50px;
 }
 
-.textBox{
-  padding-top: 2rem;
-  padding-bottom: 10%;
-  margin-right: 25px;
+.textBox {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
+
 .movieBox {
-  width: 45%;
+  width: 490px;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 img {
@@ -134,6 +140,6 @@ h1 {
 @media only screen and (max-width: 1250px) {
   #rightest {
     display: none;
-}
+  }
 }
 </style>
