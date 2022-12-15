@@ -8,11 +8,15 @@
     <div class="polygon">
       <p class="p"><strong>You want movies, eh?</strong></p>
       <p class="sub">Get the widest selection of movies available!</p>
+      <RouterLink to="/loginPage" custom v-slot="{ navigate }">
+        <button @click="navigate" role="link">Get Started</button>
+      </RouterLink>
     </div>
   </div>
   <div class='one'>
     <div class="textBox">
-      <p class="body">Get the <strong>cheapest</strong> deals for the <strong>hottest</strong> movies on the internet, starting at only
+      <p class="body">Get the <strong>cheapest</strong> deals for the <strong>hottest</strong> movies on the internet,
+        starting at only
       </p>
       <div>
         <h1>$3.99</h1>
@@ -35,6 +39,51 @@
 </template>
 
 <style scoped>
+button {
+  width: 150px;
+  padding: 5px;
+  font-size: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: rgba(219, 219, 219, 0.65);
+  margin-left: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  animation: 1s infinite alternate pulse ease-out;
+  color: white;
+}
+
+@keyframes pulse{
+  0% {
+		scale: 105%;
+    box-shadow: 0px 0px 2px 2px rgba(1, 180, 228);
+	}
+
+	100% {
+		scale: 100%;
+	}
+
+}
+
+button:hover {
+	background-color: rgba(1, 180, 228, 0.5);
+	color: rgb(240, 255, 255);
+	animation-name: hover;
+	animation-duration: 1s;
+}
+
+@keyframes hover {
+	from {
+		background-color: rgb(100, 150, 216);
+	}
+
+	to {
+		background-color: rgba(1, 180, 228, 0.5);
+
+	}
+}
+
+
 .one {
   height: 410px;
   display: flex;
@@ -47,6 +96,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .movieBox {
@@ -94,15 +145,13 @@ h1 {
 
 .box {
   width: 100%;
-  height: 500px;
   position: relative;
   border-bottom: 5px;
   border-style: solid;
   border-color: rgba(1, 180, 228, 0.5);
 }
 
-.body,
-.price {
+.body, .price {
   font-size: 25px;
 }
 
@@ -119,10 +168,12 @@ h1 {
   border-bottom: 500px solid rgba(1, 19, 39, 0.95);
   border-right: 300px solid transparent;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .p {
-  padding-top: 25%;
+  padding-top: 20%;
   margin-left: 25px;
   color: white;
   font-size: 65px;
@@ -139,6 +190,20 @@ h1 {
 
 @media only screen and (max-width: 1250px) {
   #rightest {
+    display: none;
+  }
+
+  .movieBox {
+    width: 350px;
+  }
+
+  .one {
+    gap: 25px;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .sub {
     display: none;
   }
 }

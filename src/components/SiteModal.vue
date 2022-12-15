@@ -25,6 +25,7 @@ const getMovies1 = async () => {
     })
   ).data;
   console.log(movie.value);
+  console.log(movie.videos.results[0].key)
 };
 
 getMovies1();
@@ -52,9 +53,9 @@ getMovies1();
               {{ movie.revenue - movie.budget }} $
             </p>
             <p>"{{ movie.tagline }}"</p>
-            
+
             <strong>GENRES: </strong>
-              <p class="genre" v-for="result in movie.genres"> {{ result.name }} </p>
+            <p class="genre" v-for="result in movie.genres"> {{ result.name }} </p>
             <!-- <strong>PRODUCERS:</strong> -->
             <!-- <p v-for="result in movie.production_companies">{{ result.name }}</p>
             <p class="country">
@@ -66,7 +67,7 @@ getMovies1();
             </p> -->
             <a v-bind:href="movie.homepage" class="link" target="_blank">Movie homepage</a>
             <a v-bind:href="`https://www.youtube.com/watch?v=${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key
-            }`" target="_blank">Movie trailer</a>
+            }`" target="_blank">Movie Trailer</a>
           </div>
         </div>
       </div>

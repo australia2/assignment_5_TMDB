@@ -1,17 +1,12 @@
 <script setup>
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const button = () => {
-	router.push("/loginPage");
-}
 </script>
 
 <template>
 	<div>
 		<p>Budget Movie$</p>
-		<button @click="button">Login</button>
+		<RouterLink to="/loginPage" custom v-slot="{ navigate }">
+			<button @click="navigate" role="link">Login</button>
+		</RouterLink>
 	</div>
 </template>
 
@@ -44,19 +39,19 @@ button {
 
 
 button:hover {
-  background-color: rgba(1, 180, 228, 0.5);
-  color: rgb(240, 255, 255);
-  animation-name: hover;
-  animation-duration: 1s;
+	background-color: rgba(1, 180, 228, 0.5);
+	color: rgb(240, 255, 255);
+	animation-name: hover;
+	animation-duration: 1s;
 }
 
 @keyframes hover {
-  from {
-    background-color: rgb(216, 216, 216);
-  }
+	from {
+		background-color: rgb(216, 216, 216);
+	}
 
-  to {
-    background-color: rgba(1, 180, 228, 0.5);
-  }
+	to {
+		background-color: rgba(1, 180, 228, 0.5);
+	}
 }
 </style>

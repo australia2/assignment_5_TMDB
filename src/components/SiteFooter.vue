@@ -1,11 +1,7 @@
 <script setup>
-import { useRouter } from "vue-router";
 
-const router = useRouter();
 
-const terms = () => {
-  router.push("/policy")
-}
+
 </script>
 
 <template>
@@ -19,8 +15,13 @@ const terms = () => {
     </div>
     <div class="line"></div>
     <div>
-      <p class="hover" @click="terms">Terms of service</p>
-      <p class="hover" @click="terms">Privacy policy</p>
+      <RouterLink to="/policy" custom v-slot="{ navigate }">
+        <p class="hover" @click="navigate" role="link">Terms of service</p>
+      </RouterLink>
+
+      <RouterLink to="/policy" custom v-slot="{ navigate }">
+        <p class="hover" @click="navigate" role="link">Privacy policy</p>
+      </RouterLink>
     </div>
     <div class="line"></div>
     <div class="logo">
@@ -66,6 +67,8 @@ p {
 .hover{
   padding: 10px;
   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 .hover:hover{
   background-color: rgb(0, 43, 80);
