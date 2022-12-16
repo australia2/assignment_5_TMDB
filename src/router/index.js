@@ -26,6 +26,10 @@ const router = createRouter({
     {
       path: '/:pathMatch(.*)*',
       component: NotFound
+    },
+    {
+      path: '/404',
+      component: NotFound
     }
   ],
 });

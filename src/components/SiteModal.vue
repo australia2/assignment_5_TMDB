@@ -24,11 +24,11 @@ const getMovies1 = async () => {
       },
     })
   ).data;
-  console.log(movie.value);
-  console.log(movie.videos.results[0].key)
+  // console.log(movie.value);
+  // console.log(movie.value.videos.results[0].key)
 };
 
-getMovies1();
+await getMovies1();
 </script>
 
 <template>
@@ -38,7 +38,12 @@ getMovies1();
         <button class="close-button" @click="emits('toggleModal')">X</button>
         <h1>{{ movie.original_title }}</h1>
         <div class="data-container">
-          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
+          <div id="media">
+            <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
+            <iframe
+              :src="`https://www.youtube.com/embed/${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key}`"
+              frameborder="0"></iframe>
+          </div>
           <div class="info-container">
             <p><strong>RELEASE DATE:</strong> {{ movie.release_date }}</p>
             <p><strong>POPULARITY:</strong> {{ movie.popularity }}</p>
@@ -52,7 +57,6 @@ getMovies1();
               {{ movie.revenue }} $ | <strong>NET GAIN:</strong>
               {{ movie.revenue - movie.budget }} $
             </p>
-            <p>"{{ movie.tagline }}"</p>
 
             <strong>GENRES: </strong>
             <p class="genre" v-for="result in movie.genres"> {{ result.name }} </p>
@@ -65,9 +69,8 @@ getMovies1();
             <!-- <p class="OG">
               <strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}
             </p> -->
-            <a v-bind:href="movie.homepage" class="link" target="_blank">Movie homepage</a>
-            <a v-bind:href="`https://www.youtube.com/watch?v=${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key
-            }`" target="_blank">Movie Trailer</a>
+            <a :href="movie.homepage" class="link" target="_blank">Movie homepage</a>
+            <p>"{{ movie.tagline }}"</p>
           </div>
         </div>
       </div>
@@ -76,6 +79,15 @@ getMovies1();
 </template>
 
 <style scoped>
+#media{
+  width: 500px;
+}
+iframe {
+  border-radius: 10px;
+  width: 100px;
+  aspect-ratio: 16/9;
+}
+
 .genre {
   display: flex;
   flex-direction: row;
@@ -112,7 +124,10 @@ strong,
 a {
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+
 }
 
 a {
@@ -136,7 +151,7 @@ a {
   background-color: #1f2123;
   color: white;
   width: clamp(280px, 100%, 800px);
-  height: 400px;
+  height: 500px;
   position: relative;
 }
 

@@ -49,6 +49,10 @@
       fugit
       quas sed assumenda laboriosam nemo, voluptate recusandae accusamus nobis saepe beatae consequuntur modi neque.
     </p>
+    <RouterLink to="/404" custom v-slot="{ navigate }">
+    <h2 @click="navigate" role="link">Where's waldo?</h2>
+      </RouterLink>
+
 
   </div>
 </template>

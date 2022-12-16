@@ -23,7 +23,8 @@ p {
 	display: inline;
 	font-size: 50px;
 	padding-left: 10px;
-	font-weight: 500;
+	font-weight: 0;
+	color: rgb(0, 43, 80);
 }
 
 button {

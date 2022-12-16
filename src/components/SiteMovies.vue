@@ -68,7 +68,6 @@ getPopular()
 </script>
 
 <template>
-	<SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
 	<button @click=day()>Top movies today</button>
 	<button @click=week()>Top movies week</button>
 	<!-- <button @click=tv()>Top shows this week</button>
@@ -82,9 +81,13 @@ getPopular()
 			<p class="title">{{ result.original_title }}</p>
 		</div>
 	</div>
+	<SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
 </template>
 
 <style scoped>
+div{
+	background-color: rgb(0, 0, 0);
+}
 .movie-container {
 	display: flex;
 	flex-direction: row;
@@ -110,13 +113,15 @@ img {
 	animation-duration: 2s;
 }
 
-@keyframes load{
+@keyframes load {
 	0% {
 		opacity: 0;
 	}
+
 	50% {
 		opacity: 0.5;
 	}
+
 	100% {
 		opacity: 1;
 	}
@@ -134,10 +139,12 @@ img:hover {
 		opacity: 0.5;
 		transform: rotateY(0deg);
 	}
+
 	10% {
 		opacity: 0.4;
 		transform: rotateY(1deg);
 	}
+
 	20% {
 		opacity: 0.3;
 		transform: rotateY(1deg);
