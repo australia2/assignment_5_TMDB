@@ -106,6 +106,21 @@ getPopular()
 img {
 	width: 200px;
 	border-radius: 5px;
+	animation-name: load;
+	animation-duration: 2s;
+}
+
+@keyframes load{
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+
 }
 
 img:hover {
@@ -118,7 +133,6 @@ img:hover {
 	0% {
 		opacity: 0.5;
 		transform: rotateY(0deg);
-
 	}
 	10% {
 		opacity: 0.4;
