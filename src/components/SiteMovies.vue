@@ -6,7 +6,7 @@ import SiteModal from '../components/SiteModal.vue';
 
 const showModal = ref(false);
 const selectedId = ref(0);
-const time = ref("week")
+const time = ref("day")
 const media = ref("movie")
 
 const openModal = (id) => {
@@ -42,17 +42,10 @@ const getData = async (url, params) => {
 // }
 // }
 
-// const week = () => {
-// 	time.value = "week";
-// 	console.log(time.value);
-// 	getPopular = async () => {
-// 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
-// 		params: {
-// 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-// 		}
-// 	})).data;
-// }
-// }
+const week = async () => {
+	time.value = "week";
+	console.log(time.value);
+}
 
 const getPopular = async () => {
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
@@ -68,8 +61,10 @@ getPopular()
 </script>
 
 <template>
-	<button @click=day()>Top movies today</button>
-	<button @click=week()>Top movies week</button>
+	<div>
+		<button class="left-button" @click=day()>Top movies today</button>
+		<button @click=week()>Top movies week</button>
+	</div>
 	<!-- <button @click=tv()>Top shows this week</button>
 	<button @click=movie()>Top shows today</button> -->
 
@@ -85,9 +80,13 @@ getPopular()
 </template>
 
 <style scoped>
-div{
+.left-button{
+	margin-left: 20px;
+}
+div {
 	background-color: rgb(0, 0, 0);
 }
+
 .movie-container {
 	display: flex;
 	flex-direction: row;
@@ -95,7 +94,7 @@ div{
 	gap: 5px;
 	align-items: center;
 	justify-content: space-evenly;
-	margin-top: 10px;
+	padding-top: 20px;
 }
 
 .title {
@@ -125,7 +124,6 @@ img {
 	100% {
 		opacity: 1;
 	}
-
 }
 
 img:hover {
@@ -153,12 +151,14 @@ img:hover {
 
 button {
 	width: 150px;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 10px;
 	border-radius: 5px;
 	font-weight: 600;
 	height: 25px;
 	font-size: 1rem;
+	background-color: rgb(0, 43, 80);
+	color: white;
 }
 
 button:hover {

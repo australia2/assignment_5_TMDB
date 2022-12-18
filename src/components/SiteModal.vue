@@ -36,13 +36,12 @@ await getMovies1();
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
-        <h1>{{ movie.original_title }}</h1>
+        <a :href="movie.homepage" class="link" target="_blank">{{ movie.original_title }}</a>
         <div class="data-container">
           <div id="media">
             <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
             <iframe
-              :src="`https://www.youtube.com/embed/${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key}`"
-              frameborder="0"></iframe>
+              :src="`https://www.youtube.com/embed/${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key}`"></iframe>
           </div>
           <div class="info-container">
             <p><strong>RELEASE DATE:</strong> {{ movie.release_date }}</p>
@@ -57,9 +56,10 @@ await getMovies1();
               {{ movie.revenue }} $ | <strong>NET GAIN:</strong>
               {{ movie.revenue - movie.budget }} $
             </p>
-
-            <strong>GENRES: </strong>
-            <p class="genre" v-for="result in movie.genres"> {{ result.name }} </p>
+            <div class="genre">
+              <strong>GENRES: </strong>
+              <p v-for="result in movie.genres"> {{ result.name }} </p>
+            </div>
             <!-- <strong>PRODUCERS:</strong> -->
             <!-- <p v-for="result in movie.production_companies">{{ result.name }}</p>
             <p class="country">
@@ -69,7 +69,6 @@ await getMovies1();
             <!-- <p class="OG">
               <strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}
             </p> -->
-            <a :href="movie.homepage" class="link" target="_blank">Movie homepage</a>
             <p>"{{ movie.tagline }}"</p>
           </div>
         </div>
@@ -79,59 +78,69 @@ await getMovies1();
 </template>
 
 <style scoped>
-#media{
-  width: 500px;
+#media {
+  display: flex;
+  gap: 10px;
 }
+
 iframe {
   border-radius: 10px;
-  width: 100px;
+  width: 72.72%;
   aspect-ratio: 16/9;
+}
+
+img {
+  border-radius: 10px;
+  width: 27.27%;
+  aspect-ratio: 2/3;
 }
 
 .genre {
   display: flex;
   flex-direction: row;
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 5px;
 }
 
-img {
-  width: 29%;
-  border-radius: 10px;
+.genre>p{
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  margin-left: 10px;
 }
-
-h1 {
-  padding-left: 10px;
-  background-color: rgb(1, 180, 228);
-  margin-bottom: 5px;
-}
-
 .data-container {
   display: flex;
-  justify-content: space-between;
-  margin-left: 10px;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin: 10px;
 }
 
 .info-container {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin: 10px;
   align-items: center;
-
 }
 
 .info-container>p,
-strong,
-a {
+strong{
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-right: 5px;
-
 }
 
 a {
   color: white;
+  padding-left: 10px;
+  background-color: rgb(1, 180, 228);
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .modal-outer-container {
@@ -151,7 +160,6 @@ a {
   background-color: #1f2123;
   color: white;
   width: clamp(280px, 100%, 800px);
-  height: 500px;
   position: relative;
 }
 
