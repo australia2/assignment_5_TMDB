@@ -4,7 +4,7 @@
   <div class="surround">
     <h1>Terms Of Service</h1>
     <p>lorem ujwsgpiu psgujpiawujhgsroiwa gw loraljgaerealiygiewa
-      ytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfwytugerakbtuyewabtuyfw
+      ytugerakbtuyewabtuyfwytugerakbtuyewabt
       ywuet yfr4wlti7uw ytiuywa t t7wiuteiwatuywaiabcdefgh waldo waldo</p>
     <h1>Privacy Policy</h1>
     <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nostrum dolor provident, dolorem autem ab
@@ -14,17 +14,11 @@
     </p>
     <h1>FAQ</h1>
     <h2>Where is the colour scheme from?</h2>
-    <p>The colour scheme from <a href="https://www.themoviedb.org/" target="_blank">The Movie Database</a></p>
+    <p class="scheme">Website colour scheme source: </p><a href="https://www.themoviedb.org/" target="_blank">TMDB</a>
     <h2>Why am I seeing a "0" for some values?</h2>
 
     <p> The movie may not have been released yet, or data for that specific movie may be unavailable</p>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nostrum dolor provident, dolorem autem ab
-      fugit
-      quas sed assumenda laboriosam nemo, voluptate recusandae accusamus nobis saepe beatae consequuntur modi neque.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nostrum dolor provident, dolorem autem ab
-      fugit
-      quas sed assumenda laboriosam nemo, voluptate recusandae accusamus nobis saepe beatae consequuntur modi neque.
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nostrum dolor provident, dolorem autem ab
       fugit
       quas sed assumenda laboriosam nemo, voluptate recusandae accusamus nobis saepe beatae consequuntur modi neque.
@@ -73,7 +67,9 @@ h1 {
   background-color: rgba(46, 47, 48, 0.1);
   padding: 0px;
   padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
+  display: inline;
 }
 
 * {
@@ -81,6 +77,28 @@ h1 {
 }
 
 .surround {
-  margin: 50px
+  margin: 15%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  background-color: rgb(238, 238, 238);
+  border-radius: 10px;
+}
+p{
+  line-height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.scheme{
+  display: inline;
+  padding-right: 0;
+  margin-right: 0;
+
+}
+a{
+  padding: 0;
 }
 </style>

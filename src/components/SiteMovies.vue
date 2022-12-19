@@ -66,12 +66,18 @@ const movies = () => {
 
 <template>
 	<div>
-		<button class="media" @click=movies()>Movies</button>
-		<button class="media" @click=tv()>Shows</button>
-		<button class="time" @click=week()>Week</button>
-		<button class="time" @click=day()>Day</button>
+		<h2>Filters</h2>
 	</div>
-
+	<div class="button-container">
+		<div class="inner-container">
+			<button class="media" @click=movies()>Movies</button>
+			<button class="media" @click=tv()>Shows</button>
+		</div>
+		<div class="inner-container">
+			<button class="time" @click=week()>Week</button>
+			<button class="time" @click=day()>Day</button>
+		</div>
+	</div>
 	<!-- Add something for top movie? -->
 	<!-- <img :src='`https://image.tmdb.org/t/p/w500${movie.results[0].poster_path}`' alt="" > -->
 	<div class="movie-container">
@@ -84,6 +90,25 @@ const movies = () => {
 </template>
 
 <style scoped>
+h2{
+	color: white;
+	padding: 10px;
+}
+.button-container {
+	display: flex;
+	gap: 10px;
+	padding: 10px;
+}
+
+.inner-container {
+	background-color: antiquewhite;
+	display: flex;
+	border-radius: 10px;
+	gap: 8px;
+	background-color: rgb(0, 43, 80);
+
+}
+
 div {
 	background-color: rgb(0, 0, 0);
 }
@@ -95,7 +120,6 @@ div {
 	gap: 5px;
 	align-items: center;
 	justify-content: space-evenly;
-	padding-top: 20px;
 }
 
 .title {
@@ -151,28 +175,25 @@ img:hover {
 }
 
 button {
-	width: 150px;
-	margin-top: 20px;
-	margin-left: 10px;
-	border-radius: 5px;
+	width: 50px;
+	border-radius: 10px;
 	font-weight: 600;
 	height: 25px;
 	font-size: 1rem;
 	background-color: rgb(0, 43, 80);
 	color: white;
+	margin: 3px;
 }
 
 button:hover {
-	background-color: rgb(1, 180, 228, 0.5);
+	background-color: rgb(1, 180, 228, 0.9);
 }
-.media:focus{
+
+.media:focus {
 	background-color: rgb(1, 180, 228);
-
 }
 
-.time:focus{
-	background-color: rgb(1, 180, 228);
-
+.time:focus {
+	background-color: rgb(139, 193, 208);
 }
-
 </style>

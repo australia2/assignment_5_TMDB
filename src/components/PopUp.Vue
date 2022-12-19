@@ -22,13 +22,13 @@ div {
 button {
 	width: 20px;
 	height: 20px;
-	border-radius: 10px;
-	background-color: lightGrey;
+	background-color: transparent;
 	margin: 6px;
+	color: white
 }
 
 button:hover {
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.309);
 
 }
 

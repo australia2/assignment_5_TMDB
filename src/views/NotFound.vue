@@ -1,9 +1,13 @@
 <script>
-import LoginHeader from "../components/LoginHeader.vue";
+import LoginHeader from '../components/LoginHeader.vue';
 </script>
 
 <template>
   <LoginHeader />
+  <RouterLink to="/" custom v-slot="{ navigate }">
+		<p @click="navigate" role="link">Budget Movie$</p>
+	</RouterLink>
+
   <div>
     <h1>404</h1> 
   <a href="https://www.penguinrandomhouse.com/series/WAL/wheres-waldo" target="_blank">
@@ -22,7 +26,7 @@ div {
   flex-direction: column;
 }
 
-img {
+img, div {
   animation: move;
   animation-duration: 15s;
   animation-direction: alternate;
@@ -31,14 +35,11 @@ img {
 
 @keyframes move{
   0% {
-		scale: 0.1%;
-    box-shadow: 0px 0px 2px 2px rgba(1, 180, 228);
-    transform: rotate3d(100deg);
+		scale: 50%;
 	}
 
 	50% {
 		scale: 90%;
-    transform: rotate3d(200deg);
 
 	}
 

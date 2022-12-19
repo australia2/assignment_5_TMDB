@@ -1,17 +1,10 @@
 <script setup>
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const home = () => {
-    router.push("/");
-}
-
 </script>
 
-<template> 
-	<p @click="home">Budget Movie$</p>
-
+<template>
+	<RouterLink to="/" custom v-slot="{ navigate }">
+		<p @click="navigate" role="link">Budget Movie$</p>
+	</RouterLink>
 </template>
 
 <style scoped>
@@ -26,7 +19,7 @@ p {
 	color: rgb(0, 43, 80);
 }
 
-p:hover{
+p:hover {
 	color: rgb(46, 46, 46);
 }
 </style>

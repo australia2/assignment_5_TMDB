@@ -116,7 +116,7 @@ img {
   flex-direction: column;
   gap: 10px;
   justify-content: space-evenly;
-  margin: 10px;
+  margin: 15px;
 }
 
 .info-container {
@@ -182,6 +182,6 @@ button {
 }
 
 button:hover {
-  color: rgb(1, 100, 228);
+	background-color: rgba(255, 255, 255, 0.309);
 }
 </style>
