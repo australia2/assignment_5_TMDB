@@ -85,5 +85,40 @@ form {
 
 .wrong {
   color: brown;
+  animation-duration: 0.5s;
+  animation-name: shake;
 }
+
+@keyframes shake {
+  10% {
+    rotate: 1deg;
+  }
+    20% {
+      rotate: -1deg;
+    }
+    30% {
+    rotate: 1deg;
+  }
+    40% {
+      rotate: -1deg;
+    }  50% {
+    rotate: 1deg;
+  }
+    60% {
+      rotate: -1deg;
+    }  70% {
+    rotate: 1deg;
+  }
+    80% {
+      rotate: -1deg;
+    }
+    90% {
+    rotate: 1deg;
+  }
+    100% {
+      rotate: -1deg;
+    }
+
+  }
+
 </style>

@@ -40,6 +40,7 @@ await getMovies1();
         <div class="data-container">
           <div id="media">
             <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
+            <!-- <iframe v-if="movie.value.videos.results.length != 0" -->
             <iframe
               :src="`https://www.youtube.com/embed/${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key}`"></iframe>
           </div>

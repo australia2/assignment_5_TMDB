@@ -23,10 +23,29 @@ div {
 }
 
 img {
-  scale: 10%;
+  animation: move;
+  animation-duration: 15s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
 }
-img:hover{
-  border: 100px red solid;
+
+@keyframes move{
+  0% {
+		scale: 0.1%;
+    box-shadow: 0px 0px 2px 2px rgba(1, 180, 228);
+    transform: rotate3d(100deg);
+	}
+
+	50% {
+		scale: 90%;
+    transform: rotate3d(200deg);
+
+	}
+
+	10% {
+		scale: 80%;
+	}
 }
+
 
 </style>

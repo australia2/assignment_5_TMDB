@@ -6,7 +6,7 @@ import SiteModal from '../components/SiteModal.vue';
 
 const showModal = ref(false);
 const selectedId = ref(0);
-const time = ref("day")
+const time = ref("week")
 const media = ref("movie")
 
 const openModal = (id) => {
@@ -29,24 +29,6 @@ const getData = async (url, params) => {
 		console.log(error);
 	}
 };
-
-// const day = () => {
-// 	time.value = "day";
-// 	console.log(time.value)
-// 	getPopular = async () => {
-// 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/movie/day`, {
-// 		params: {
-// 			api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-// 		}
-// 	})).data;
-// }
-// }
-
-const week = async () => {
-	time.value = "week";
-	console.log(time.value);
-}
-
 const getPopular = async () => {
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
 		params: {
@@ -57,16 +39,38 @@ const getPopular = async () => {
 	movieName.value = movie.value.results
 	console.log(movieName)
 }
-getPopular()
+await getPopular()
+
+const day = () => {
+	time.value = "day";
+	getPopular()
+}
+
+const week = () => {
+	time.value = "week";
+	getPopular()
+}
+
+const tv = () => {
+	media.value = "tv";
+	getPopular()
+}
+
+const movies = () => {
+	media.value = "movie";
+
+	getPopular()
+}
+
 </script>
 
 <template>
 	<div>
-		<button class="left-button" @click=day()>Top movies today</button>
-		<button @click=week()>Top movies week</button>
+		<button class="media" @click=movies()>Movies</button>
+		<button class="media" @click=tv()>Shows</button>
+		<button class="time" @click=week()>Week</button>
+		<button class="time" @click=day()>Day</button>
 	</div>
-	<!-- <button @click=tv()>Top shows this week</button>
-	<button @click=movie()>Top shows today</button> -->
 
 	<!-- Add something for top movie? -->
 	<!-- <img :src='`https://image.tmdb.org/t/p/w500${movie.results[0].poster_path}`' alt="" > -->
@@ -80,9 +84,6 @@ getPopular()
 </template>
 
 <style scoped>
-.left-button{
-	margin-left: 20px;
-}
 div {
 	background-color: rgb(0, 0, 0);
 }
@@ -164,4 +165,14 @@ button {
 button:hover {
 	background-color: rgb(1, 180, 228, 0.5);
 }
+.media:focus{
+	background-color: rgb(1, 180, 228);
+
+}
+
+.time:focus{
+	background-color: rgb(1, 180, 228);
+
+}
+
 </style>
