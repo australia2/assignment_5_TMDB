@@ -65,35 +65,49 @@ const movies = () => {
 </script>
 
 <template>
-	<div>
-		<h2>Filters</h2>
-	</div>
-	<div class="button-container">
-		<div class="inner-container">
-			<button class="media" @click=movies()>Movies</button>
-			<button class="media" @click=tv()>Shows</button>
-		</div>
-		<div class="inner-container">
-			<button class="time" @click=week()>Week</button>
-			<button class="time" @click=day()>Day</button>
+	<div class="filter">
+		<p>Filters:</p>
+		<div class="button-container">
+			<div class="inner-container">
+				<button class="media" @click=movies()>Movies</button>
+				<button class="media" @click=tv()>Shows</button>
+			</div>
+			<div class="inner-container">
+				<button class="time" @click=week()>Week</button>
+				<button class="time" @click=day()>Day</button>
+			</div>
 		</div>
 	</div>
 	<!-- Add something for top movie? -->
 	<!-- <img :src='`https://image.tmdb.org/t/p/w500${movie.results[0].poster_path}`' alt="" > -->
 	<div class="movie-container">
-		<div v-for="result in movieName" @click="openModal(result.id)">
+		<div v-for="result in movieName" @click="openModal(result.id)" class="movie">
 			<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="">
-			<p class="title">{{ result.original_title }}</p>
+			<div class="title">
+				<p> {{ result.original_title }}</p>
+			</div>
 		</div>
 	</div>
 	<SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
 </template>
 
 <style scoped>
-h2{
+.movie{
+	height: 315px;
+}
+.filter {
+	display: flex;
+	flex-direction: row;
+}
+
+.filter>p {
 	color: white;
 	padding: 10px;
+	display: inline;
+	font-size: 20px;
+	font-weight: 700;
 }
+
 .button-container {
 	display: flex;
 	gap: 10px;
@@ -106,7 +120,6 @@ h2{
 	border-radius: 10px;
 	gap: 8px;
 	background-color: rgb(0, 43, 80);
-
 }
 
 div {
@@ -123,13 +136,33 @@ div {
 }
 
 .title {
-	font-size: 10px;
+	font-size: 11.5px;
 	position: relative;
-	top: -150px;
+	top: -305px;
 	font-weight: 500;
 	opacity: 0;
+	color: white;
+	height: 300px;
+	background-color: rgba(99, 99, 99, 0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
 }
 
+.title:hover {
+	animation-name: display;
+	animation-duration: 0.7s;
+	opacity: 100;
+}
+@keyframes display {
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 100;
+	}
+}
 img {
 	width: 200px;
 	border-radius: 5px;
@@ -155,26 +188,10 @@ img:hover {
 	opacity: 0.5;
 	animation-name: movieHover;
 	animation-duration: 1s;
+	opacity: 0.5;
 }
 
-@keyframes movieHover {
-	0% {
-		opacity: 0.5;
-		transform: rotateY(0deg);
-	}
-
-	10% {
-		opacity: 0.4;
-		transform: rotateY(1deg);
-	}
-
-	20% {
-		opacity: 0.3;
-		transform: rotateY(1deg);
-	}
-}
-
-button {
+.media, .time {
 	width: 50px;
 	border-radius: 10px;
 	font-weight: 600;
@@ -185,8 +202,12 @@ button {
 	margin: 3px;
 }
 
-button:hover {
-	background-color: rgb(1, 180, 228, 0.9);
+.media:hover {
+	background-color: rgba(1, 179, 228, 0.7);
+}
+
+.time:hover {
+	background-color: rgba(1, 179, 228, 0.7);
 }
 
 .media:focus {
@@ -194,6 +215,6 @@ button:hover {
 }
 
 .time:focus {
-	background-color: rgb(139, 193, 208);
+	background-color: rgb(1, 180, 228);
 }
 </style>
