@@ -110,7 +110,7 @@ const movies = () => {
 
 .button-container {
 	display: flex;
-	gap: 10px;
+	gap: 6px;
 	padding: 10px;
 }
 
@@ -143,7 +143,7 @@ div {
 	opacity: 0;
 	color: white;
 	height: 300px;
-	background-color: rgba(99, 99, 99, 0.7);
+	background-color: rgba(99, 99, 99, 0.8);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -204,6 +204,10 @@ img:hover {
 
 .media:hover {
 	background-color: rgba(1, 179, 228, 0.7);
+}
+
+.media{display: none;
+
 }
 
 .time:hover {
