@@ -29,6 +29,7 @@ const getData = async (url, params) => {
 		console.log(error);
 	}
 };
+
 const getPopular = async () => {
 	movie.value = (await getData(`https://api.themoviedb.org/3/trending/${media.value}/${time.value}`, {
 		params: {
@@ -39,6 +40,7 @@ const getPopular = async () => {
 	movieName.value = movie.value.results
 	console.log(movieName)
 }
+
 await getPopular()
 
 const day = () => {
@@ -58,7 +60,6 @@ const tv = () => {
 
 const movies = () => {
 	media.value = "movie";
-
 	getPopular()
 }
 

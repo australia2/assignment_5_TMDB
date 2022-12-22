@@ -14,6 +14,10 @@ const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
 const movie = ref("");
+const castList = ref("");
+const castName = ref("")
+const castCharacter = ref("")
+
 
 const getMovies1 = async () => {
   movie.value = (
@@ -26,6 +30,19 @@ const getMovies1 = async () => {
   ).data;
   // console.log(movie.value);
   // console.log(movie.value.videos.results[0].key)
+  castList.value = (await getData(`https://api.themoviedb.org/3/movie/${props.id}/credits`, {
+    params: {
+      api_key: "c38e6d2014c822c96f368ab7d8dd502d",
+    }
+  })).data;
+  castName.value = (castList.value.cast)
+  console.log(castName.value[0].name);
+  console.log(castName.value[1].name);
+  console.log(castName.value[2].name);
+  console.log(castName.value[3].name);
+  console.log(castName.value[4].name);
+  console.log(castName.value[5].name);
+  console.log(castName.value[6].name);
 };
 
 await getMovies1();
@@ -72,6 +89,9 @@ await getMovies1();
             </p> -->
             <p>"{{ movie.tagline }}"</p>
           </div>
+          <div>
+            <p v-for="result in castName.value"> {{ result }} </p>
+          </div>
         </div>
       </div>
     </div>
@@ -103,7 +123,7 @@ img {
   border-radius: 5px;
 }
 
-.genre>p{
+.genre>p {
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
   padding-top: 5px;
@@ -111,6 +131,7 @@ img {
   padding-right: 5px;
   margin-left: 10px;
 }
+
 .data-container {
   display: flex;
   flex-direction: column;
@@ -127,7 +148,7 @@ img {
 }
 
 .info-container>p,
-strong{
+strong {
   background-color: rgba(100, 100, 100, 0.5);
   border-radius: 5px;
   padding-top: 5px;
@@ -182,6 +203,6 @@ button {
 }
 
 button:hover {
-	background-color: rgba(255, 255, 255, 0.309);
+  background-color: rgba(255, 255, 255, 0.309);
 }
 </style>
