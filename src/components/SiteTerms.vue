@@ -64,12 +64,12 @@
 
 <style scoped>
 h1 {
-  background-color: rgba(46, 47, 48, 0.1);
   padding: 0px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
   display: inline;
+  text-decoration: underline;
 }
 
 * {
@@ -81,8 +81,7 @@ h1 {
   margin-top: 20px;
   margin-bottom: 20px;
 
-  background-color: rgb(238, 238, 238);
-  border-radius: 10px;
+  background-color: rgba(238, 238, 238, 0.326);
 }
 p{
   line-height: 30px;

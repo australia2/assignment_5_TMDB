@@ -45,7 +45,6 @@ form {
   flex-direction: column;
   gap: 5px;
 }
-
 .submit {
   width: 210.36px;
   height: 40px;
@@ -120,5 +119,4 @@ form {
     }
 
   }
-
 </style>

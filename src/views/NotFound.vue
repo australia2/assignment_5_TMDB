@@ -19,11 +19,18 @@ import LoginHeader from '../components/LoginHeader.vue';
 </template>
 
 <style scoped>
+h1{
+  position: absolute;
+}
 div {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+img{
+  position: relative;
 }
 
 img, div {
@@ -36,10 +43,12 @@ img, div {
 @keyframes move{
   0% {
 		scale: 50%;
+    rotate: 25deg;
 	}
 
 	50% {
-		scale: 90%;
+		scale: 150%;
+    rotate: -2deg;
 
 	}
 

@@ -81,11 +81,13 @@ const movies = () => {
 	</div>
 	<!-- Add something for top movie? -->
 	<!-- <img :src='`https://image.tmdb.org/t/p/w500${movie.results[0].poster_path}`' alt="" > -->
-	<div class="movie-container">
-		<div v-for="result in movieName" @click="openModal(result.id)" class="movie">
-			<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="">
-			<div class="title">
-				<p> {{ result.original_title }}</p>
+	<div class="movie-outer-container">
+		<div class="movie-container">
+			<div v-for="result in movieName" @click="openModal(result.id)" class="movie">
+				<img :src='`https://image.tmdb.org/t/p/w500${result.poster_path}`' alt="">
+				<div class="title">
+					<p> {{ result.original_title }}</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -93,9 +95,16 @@ const movies = () => {
 </template>
 
 <style scoped>
-.movie{
-	height: 315px;
+.movie-outer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
 }
+.movie {
+	height: 300px;
+}
+
 .filter {
 	display: flex;
 	flex-direction: row;
@@ -129,11 +138,9 @@ div {
 
 .movie-container {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 5px;
-	align-items: center;
-	justify-content: space-evenly;
+	flex-flow: row wrap;
+	gap: 7.5px;
+	justify-content: center;
 }
 
 .title {
@@ -156,14 +163,17 @@ div {
 	animation-duration: 0.7s;
 	opacity: 100;
 }
+
 @keyframes display {
-	from{
+	from {
 		opacity: 0;
 	}
-	to{
+
+	to {
 		opacity: 100;
 	}
 }
+
 img {
 	width: 200px;
 	border-radius: 5px;
@@ -192,7 +202,8 @@ img:hover {
 	opacity: 0.5;
 }
 
-.media, .time {
+.media,
+.time {
 	width: 50px;
 	border-radius: 10px;
 	font-weight: 600;
@@ -207,7 +218,8 @@ img:hover {
 	background-color: rgba(1, 179, 228, 0.7);
 }
 
-.media{display: none;
+.media {
+	display: none;
 
 }
 

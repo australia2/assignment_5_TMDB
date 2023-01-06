@@ -35,14 +35,14 @@ const getMovies1 = async () => {
       api_key: "c38e6d2014c822c96f368ab7d8dd502d",
     }
   })).data;
-  castName.value = (castList.value.cast)
-  console.log(castName.value[0].name);
-  console.log(castName.value[1].name);
-  console.log(castName.value[2].name);
-  console.log(castName.value[3].name);
-  console.log(castName.value[4].name);
-  console.log(castName.value[5].name);
-  console.log(castName.value[6].name);
+  // castName.value = (castList.value.cast)
+  // console.log(castName.value[0].name);
+  // console.log(castName.value[1].name);
+  // console.log(castName.value[2].name);
+  // console.log(castName.value[3].name);
+  // console.log(castName.value[4].name);
+  // console.log(castName.value[5].name);
+  // console.log(castName.value[6].name);
 };
 
 await getMovies1();
@@ -90,7 +90,7 @@ await getMovies1();
             <p>"{{ movie.tagline }}"</p>
           </div>
           <div>
-            <p v-for="result in castName.value"> {{ result }} </p>
+            <!-- <p v-for="result in castName.value"> {{ result }} </p> -->
           </div>
         </div>
       </div>
