@@ -140,7 +140,7 @@ div {
 	display: flex;
 	flex-flow: row wrap;
 	gap: 7.5px;
-	justify-content: center;
+	width: 95%;
 }
 
 .title {
