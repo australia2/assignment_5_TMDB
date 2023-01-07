@@ -138,9 +138,6 @@ div {
 
 .movie-container {
 	display: flex;
-	flex-flow: row wrap;
-	gap: 7.5px;
-	width: 95%;
 }
 
 .title {
