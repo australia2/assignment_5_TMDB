@@ -1,5 +1,5 @@
 <script>
-import LoginHeader from '../components/LoginHeader.vue';
+import LoginHeader from '../components/LoginHeader.vue'
 </script>
 
 <template>

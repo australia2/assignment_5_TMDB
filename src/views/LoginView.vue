@@ -1,7 +1,7 @@
 <script setup>
-import Login from '../components/SiteLogin.vue';
-import Footer from '../components/SiteFooter.vue';
-import LoginHeader from '../components/LoginHeader.vue';
+import Login from '../components/SiteLogin.vue'
+import Footer from '../components/SiteFooter.vue'
+import LoginHeader from '../components/LoginHeader.vue'
 </script>
 
 <template>

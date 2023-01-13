@@ -1,7 +1,7 @@
 <script setup>
 import Header from '../components/LoginHeader.vue'
-import SiteTerms from "../components/SiteTerms.vue";
-import Footer from "../components/SiteFooter.vue";
+import SiteTerms from "../components/SiteTerms.vue"
+import Footer from "../components/SiteFooter.vue"
 </script>
 
 <template>
@@ -11,5 +11,4 @@ import Footer from "../components/SiteFooter.vue";
 </template>
 
 <style scoped>
-
 </style>
