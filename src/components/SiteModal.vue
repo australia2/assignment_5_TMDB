@@ -58,7 +58,6 @@ await getMovies1();
               <strong>GENRES: </strong>
               <p v-for="result in movie.genres"> {{ result.name }} </p>
             </div>
-
             <p>"{{ movie.tagline }}"</p>
           </div>
           <div>
