@@ -137,13 +137,39 @@ div {
 }
 
 .movie-container {
-	display: flex;
+	display: grid;
+	grid-template: 300px / auto auto auto;
+	grid-gap: 10px;
 }
 
+@media only screen and (min-width: 820px) {
+	.movie-container {
+		grid-template: 300px / auto auto auto auto;
+	}
+}
+
+@media only screen and (min-width: 1030px) {
+	.movie-container {
+		grid-template: 300px / auto auto auto auto auto;
+	}
+}
+
+@media only screen and (min-width: 1240px) {
+	.movie-container {
+		grid-template: 300px / auto auto auto auto auto auto;
+	}
+}
+
+@media only screen and (min-width: 1450px) {
+	.movie-container {
+		grid-template: 300px / auto auto auto auto auto auto auto;
+	}
+}
 .title {
 	font-size: 11.5px;
 	position: relative;
-	top: -305px;
+	bottom: 305px;
+	width: 200px;;
 	font-weight: 500;
 	opacity: 0;
 	color: white;
