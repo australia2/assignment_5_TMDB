@@ -2,7 +2,6 @@
 import Header from '../components/HomeHeader.vue'
 import Hero from '../components/SiteHero.vue'
 import Footer from '../components/SiteFooter.vue'
-
 </script>
 
 <template>

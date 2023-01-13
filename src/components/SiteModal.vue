@@ -14,10 +14,6 @@ const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
 const movie = ref("");
-const castList = ref("");
-const castName = ref("")
-const castCharacter = ref("")
-
 
 const getMovies1 = async () => {
   movie.value = (
@@ -28,21 +24,6 @@ const getMovies1 = async () => {
       },
     })
   ).data;
-  // console.log(movie.value);
-  // console.log(movie.value.videos.results[0].key)
-  castList.value = (await getData(`https://api.themoviedb.org/3/movie/${props.id}/credits`, {
-    params: {
-      api_key: "c38e6d2014c822c96f368ab7d8dd502d",
-    }
-  })).data;
-  // castName.value = (castList.value.cast)
-  // console.log(castName.value[0].name);
-  // console.log(castName.value[1].name);
-  // console.log(castName.value[2].name);
-  // console.log(castName.value[3].name);
-  // console.log(castName.value[4].name);
-  // console.log(castName.value[5].name);
-  // console.log(castName.value[6].name);
 };
 
 await getMovies1();
@@ -57,7 +38,6 @@ await getMovies1();
         <div class="data-container">
           <div id="media">
             <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="" />
-            <!-- <iframe v-if="movie.value.videos.results.length != 0" -->
             <iframe
               :src="`https://www.youtube.com/embed/${movie.videos.results.filter((video) => video.type === 'Trailer').at(0).key}`"></iframe>
           </div>
@@ -78,19 +58,10 @@ await getMovies1();
               <strong>GENRES: </strong>
               <p v-for="result in movie.genres"> {{ result.name }} </p>
             </div>
-            <!-- <strong>PRODUCERS:</strong> -->
-            <!-- <p v-for="result in movie.production_companies">{{ result.name }}</p>
-            <p class="country">
-              <strong>PRODUCTION COUNTRY:</strong>
-              {{ movie.production_countries[0].iso_3166_1 }}
-            </p> -->
-            <!-- <p class="OG">
-              <strong>ORIGINAL LANGUAGE:</strong> {{ movie.original_language }}
-            </p> -->
+
             <p>"{{ movie.tagline }}"</p>
           </div>
           <div>
-            <!-- <p v-for="result in castName.value"> {{ result }} </p> -->
           </div>
         </div>
       </div>

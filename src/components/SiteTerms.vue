@@ -1,4 +1,5 @@
-<script></script>
+<script setup>
+</script>
 
 <template>
   <div class="surround">
@@ -46,7 +47,7 @@
     </p>
     <h2>Why does it say "Lorem ipsum, dolor sit amet consectetur adipisicing elit" everywhere?</h2>
     <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Where's Waldo? Voluptatum nostrum dolor provident,
+      Just filler text; Lorem, ipsum dolor sit amet consectetur adipisicing elit. Where's Waldo? Voluptatum nostrum dolor provident,
       dolorem autem ab
       fugit
       quas sed assumenda laboriosam nemo, voluptate recusandae accusamus nobis saepe beatae consequuntur modi neque.
@@ -57,8 +58,6 @@
     <RouterLink to="/404" custom v-slot="{ navigate }">
       <h2 @click="navigate" role="link">Where's waldo?</h2>
     </RouterLink>
-
-
   </div>
 </template>
 

@@ -53,36 +53,33 @@ button {
   color: white;
 }
 
-@keyframes pulse{
+@keyframes pulse {
   0% {
-		scale: 105%;
+    scale: 105%;
     box-shadow: 0px 0px 2px 2px rgba(1, 180, 228);
-	}
+  }
 
-	100% {
-		scale: 100%;
-	}
-
+  100% {
+    scale: 100%;
+  }
 }
 
 button:hover {
-	background-color: rgba(1, 180, 228, 0.5);
-	color: rgb(240, 255, 255);
-	animation-name: hover;
-	animation-duration: 1s;
+  background-color: rgba(1, 180, 228, 0.5);
+  color: rgb(240, 255, 255);
+  animation-name: hover;
+  animation-duration: 1s;
 }
 
 @keyframes hover {
-	from {
-		background-color: rgb(100, 150, 216);
-	}
+  from {
+    background-color: rgb(100, 150, 216);
+  }
 
-	to {
-		background-color: rgba(1, 180, 228, 0.5);
-
-	}
+  to {
+    background-color: rgba(1, 180, 228, 0.5);
+  }
 }
-
 
 .one {
   height: 410px;

@@ -5,7 +5,7 @@ import Footer from "../components/SiteFooter.vue";
 </script>
 
 <template>
-  	<Header class="sticky" />
+  <Header class="sticky" />
   <SiteTerms />
   <Footer />
 </template>

@@ -1,7 +1,4 @@
 <script setup>
-
-
-
 </script>
 
 <template>
@@ -31,16 +28,16 @@
         alt="TMDB link">
     </div>
   </div>
-
 </template>
 
 <style scoped>
-.line{
+.line {
   width: 1px;
   border-radius: 1px;
   background-color: white;
   height: 75%;
 }
+
 .two {
   width: 100%;
   height: 250px;
@@ -64,13 +61,14 @@ p {
   margin-left: 5px
 }
 
-.hover{
+.hover {
   padding: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
 }
-.hover:hover{
+
+.hover:hover {
   background-color: rgb(0, 43, 80);
   border-radius: 10px;
 }

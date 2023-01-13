@@ -38,7 +38,6 @@ button {
 	margin-right: 10px;
 }
 
-
 button:hover {
 	background-color: rgba(1, 180, 228, 0.5);
 	color: rgb(240, 255, 255);

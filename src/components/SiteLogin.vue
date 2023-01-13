@@ -5,7 +5,6 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 const username = ref("");
 const password = ref("");
-
 const error = ref(false);
 const login = () => {
   if (username.value === "tmdb" && password.value === "movies") {
@@ -23,7 +22,6 @@ const login = () => {
       <input type="password" v-model="password" placeholder="Password" class="input" />
       <input type="submit" value="Login" class="submit" />
     </form>
-
     <div v-if="error" class="error">
       <p class="wrong">Incorrect username/password!</p>
     </div>
@@ -45,6 +43,7 @@ form {
   flex-direction: column;
   gap: 5px;
 }
+
 .submit {
   width: 210.36px;
   height: 40px;
@@ -92,31 +91,42 @@ form {
   10% {
     rotate: 1deg;
   }
-    20% {
-      rotate: -1deg;
-    }
-    30% {
-    rotate: 1deg;
-  }
-    40% {
-      rotate: -1deg;
-    }  50% {
-    rotate: 1deg;
-  }
-    60% {
-      rotate: -1deg;
-    }  70% {
-    rotate: 1deg;
-  }
-    80% {
-      rotate: -1deg;
-    }
-    90% {
-    rotate: 1deg;
-  }
-    100% {
-      rotate: -1deg;
-    }
 
+  20% {
+    rotate: -1deg;
   }
+
+  30% {
+    rotate: 1deg;
+  }
+
+  40% {
+    rotate: -1deg;
+  }
+
+  50% {
+    rotate: 1deg;
+  }
+
+  60% {
+    rotate: -1deg;
+  }
+
+  70% {
+    rotate: 1deg;
+  }
+
+  80% {
+    rotate: -1deg;
+  }
+
+  90% {
+    rotate: 1deg;
+  }
+
+  100% {
+    rotate: -1deg;
+  }
+
+}
 </style>
